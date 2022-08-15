@@ -2,7 +2,7 @@
 from rest_framework.permissions import DjangoModelPermissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .serializers import ClansSerializer, UserSerializer, GroupSerializer
+from .serializers import BattleSerializer, ClansSerializer, League_gradeSerializer, LeagueSerializer, MemberSerializer, UserSerializer, GroupSerializer, WarSerializer
 from .base import BaseView
 from .models import *
 
@@ -18,6 +18,31 @@ class GroupViewSet(BaseView):
 class ClansViewSet(BaseView):
     queryset = Clans.objects.all()
     serializer_class = ClansSerializer
+    search_fields = ['id', ]
+
+class MemberViewSet(BaseView):
+    queryset = Member.objects.all()
+    serializer_class = MemberSerializer
+    search_fields = ['id', ]
+
+class LeagueViewSet(BaseView):
+    queryset = League.objects.all()
+    serializer_class = LeagueSerializer
+    search_fields = ['id', ]
+
+class WarViewSet(BaseView):
+    queryset = War.objects.all()
+    serializer_class = WarSerializer
+    search_fields = ['id', ]
+
+class BattleViewSet(BaseView):
+    queryset = Battle.objects.all()
+    serializer_class = BattleSerializer
+    search_fields = ['id', ]
+
+class League_gradeViewSet(BaseView):
+    queryset = League_grade.objects.all()
+    serializer_class = League_gradeSerializer
     search_fields = ['name', ]
 
 class ClansAPIView(APIView):

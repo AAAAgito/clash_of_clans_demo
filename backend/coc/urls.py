@@ -7,6 +7,11 @@ from .views import *
 
 router = DefaultRouter()
 router.register(r'clans', ClansViewSet)
+router.register(r'member', MemberViewSet)
+router.register(r'league', LeagueViewSet)
+router.register(r'war', WarViewSet)
+router.register(r'battle', BattleViewSet)
+router.register(r'league_grade', League_gradeViewSet)
 router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
 

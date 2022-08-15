@@ -11,7 +11,7 @@ class Clans(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length = 64)
     note = models.TextField()
-    leader = models.ManyToManyField(User, null=True, blank=True)
+    leader = models.IntegerField()
     group = models.ManyToManyField(Group, null=True, blank=True)
 
     def __unicode__(self):
