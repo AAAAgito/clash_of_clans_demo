@@ -13,12 +13,12 @@ class MemberSerializer(serializers.ModelSerializer):
     group = serializers.SerializerMethodField()
     class Meta:
         model = Member
-        fields = ('id', 'name', 'note', 'leader', 'group', )
+        fields = ('id', 'clans_id', 'name', 'note', 'leader', 'group', )
 
 class LeagueSerializer(serializers.ModelSerializer):
     class Meta:
         model = League
-        fields = ('id', 'start_date','name',  )
+        fields = ('id', 'clans_id', 'start_date','name',  )
 
 class WarSerializer(serializers.ModelSerializer):
     class Meta:

@@ -23,6 +23,7 @@ class Clans(models.Model):
 
 class Member(models.Model):
     id = models.IntegerField(primary_key=True)
+    clans_id = models.IntegerField()
     name = models.CharField(max_length = 64)
     user = models.ManyToManyField(User, null=True, blank=True)
     group = models.ManyToManyField(Group, null=True, blank=True)
@@ -36,6 +37,7 @@ class Member(models.Model):
 
 class League(models.Model):
     id = models.IntegerField(primary_key=True)
+    clans_id = models.IntegerField()
     start_date = models.DateField()
     name = models.CharField(max_length = 64)
 
